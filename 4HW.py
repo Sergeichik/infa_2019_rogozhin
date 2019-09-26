@@ -1,4 +1,17 @@
 from graph import *
+def ellipse( a, b, x0, y0):
+    x = a
+    y = 0
+    s = [(x0 + a, y0)]
+    for i in range(2 * a):
+        x -= 1
+        y = ((1 - x ** 2 / (a ** 2)) * b ** 2) ** 0.5
+        s.append((x + x0, y + y0))
+    for i in range(2 * a):
+        x += 1
+        y = -(((1 - x ** 2 / (a ** 2)) * b ** 2) ** 0.5)
+        s.append((x + x0, y + y0))
+    polygon(s)
 
 windowSize(1760, 769)
 canvasSize(1760, 769)
@@ -16,8 +29,8 @@ penColor(0, 0, 0)
 
 brushColor(100, 100, 255)
 penColor('black')
-circle(528, 349, 35)
-circle(398 , 349, 35)
+ellipse(48,30,528, 349)
+ellipse(48,30,398,349)
 brushColor('black')
 circle(528, 349, 10)
 circle(398 , 349, 10)
@@ -42,8 +55,8 @@ circle(870, 115, 40)
 
 penColor('black')
 brushColor('orange')
-polygon([(300, 629), (220, 629), (210, 539), (280, 489), (320, 549)])
-polygon([(700, 629), (620, 629), (610, 539), (680, 489), (720, 549)])
+circle(260,549,60)
+circle(665,549,60)
 
 brushColor('purple')
 polygon([(293,275), (336,219), (267,205)])
@@ -69,8 +82,8 @@ penColor(0, 0, 0)
 
 brushColor(191, 200, 183)
 penColor('black')
-circle(1328, 349, 35)
-circle(1198 , 349, 35)
+ellipse(48,30,1328, 349)
+ellipse(48,30,1198 , 349)
 brushColor('black')
 circle(1328, 349, 10)
 circle(1198 , 349, 10)
@@ -95,8 +108,8 @@ circle(1670, 115, 40)
 
 penColor('black')
 brushColor('green')
-polygon([(1100, 629), (1020, 629), (1010, 539), (1080, 489), (1120, 549)])
-polygon([(1500, 629), (1420, 629), (1410, 539), (1480, 489), (1520, 549)])
+circle(1060,549,60)
+circle(1465,549,60)
 
 brushColor('yellow')
 polygon([(1093,275), (1136,219), (1067,205)])
@@ -115,4 +128,5 @@ brushColor('black')
 label('PYTHON is REALLY AMAZING!', 00, 00, font=('Arial 32', 90, 'bold'), bg='green', foreground='black')
 
 run()
+
 
